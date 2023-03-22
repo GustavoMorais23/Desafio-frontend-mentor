@@ -1,0 +1,167 @@
+* {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+:root {
+    --color-primary: hsl(215, 51%, 70%);
+    --color-secundary:hsl(178, 100%, 50%);
+    --color-mainbg: hsl(217, 54%, 11%);
+    --color-cardbg: hsl(216, 50%, 16%); 
+    --color-line: hsl(215, 32%, 27%);
+    --color-white: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--color-mainbg);
+}
+
+main {                                   /* alinhando no centro */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;           /* align items nao funciona se nao tiver uma altura */ /* Altura em baixo */
+    height: 100vh;
+    padding: 0 30px;
+}
+
+
+.card {
+    max-width: 350px;                        /* Define a largura, não ocupa a pagina inteira */
+    background-color: var(--color-cardbg);      
+    border-radius: 15px;
+    padding: 25px;     /* O padding ta servindo para dar espaçamento dos items do cartao */
+}
+.image-link .image {
+    width:100%;                    /* Deixando a imagem dentro do container */
+    border-radius: 7px;
+}
+
+.image-link{
+    position: relative;            /* Pra ficar a imagem do before logo abaixo */
+    display: flex;                 /* Pra ocupar toda a imagem, tirei print nome:cubo.doido */
+}
+
+.image-link::before {
+    content: '';
+    background-color: var(--color-secundary);
+    width: 100%;                           /* Ocupar toda imagem com a cor */
+    height: 100%;
+    position: absolute;
+    opacity: 0.4;
+    display: none;
+
+}
+
+.image-link::after {
+    content: '';
+    background-image: url(../image/icon-view.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.image-link:hover::before,
+.image-link:hover::after{                                /* Para acessar o before e after quando passar o mouse */
+    display: block;
+}
+
+.title-link .title{
+    color: var(--color-white);
+    font-size: 22px;
+    margin: 25px 0 20px;        /* 25 para cima, 0 para os lados, e 20 para baixo */
+
+}
+
+.title-link .title:hover {
+    color: var(--color-secundary);
+}
+
+.card-about {
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+    margin-bottom: 23px;        /* Espaçamento entre as informçoes dos valores */
+}
+
+.value-card {
+    display: flex;         /* Deixar os elementos um do lado do outro */
+    justify-content: space-between;
+    margin-bottom: 23px;
+}
+
+.value-card .price {
+    color: var(--color-secundary);
+    display: flex;                         /* ficar do lado,'centralizado com o before'. */
+}
+
+.value-card .time {
+    color: var(--color-primary);
+    display: flex;
+}
+
+.value-card .price::before {
+    content: '';
+    background-image: url(../image/icon-ethereum.svg);       /* Adicionar uma imagem ../ */
+    background-repeat: no-repeat;         /* Nao repetir a imagem */
+    background-position: center;
+    display: inline-block;                /* Precisa disso para aparecer, tendo que ser inline,tendo tamanho e largura*/
+    width: 15px;
+    height: 20px;
+    margin-right: 6px;                 /* Espaçamento da imagem do lado direito */
+}
+
+
+.value-card .time::before {
+    content: '';
+    background-image: url(../image/icon-clock.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--color-line);
+    padding-top: 15px;           /* Espaçamento apenas em cima, da borda sobre a div do conteudo */
+}
+
+.creator-about {
+    color: var(--color-primary);
+}
+
+.focus {
+    color: var(--color-white);
+    font-size: 16px;
+}
+
+.autor {
+    max-width: 35px;
+    border: 1px solid var(--color-white);
+    border-radius: 50%;                      /* Deixar a borda contorno da imagem */
+    margin-right: 15px;                     /* Dar espaçamento do lado direito */
+}
+
+.focus:hover{
+    color: var(--color-secundary);
+}
+
+
+.end .end-about {
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: var(--color-primary);
+}
+
+.end a:hover {
+    color: var(--color-secundary);
+}
